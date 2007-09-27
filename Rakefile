@@ -12,11 +12,13 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-desc 'Generate documentation for the restful_crud_integration_tester plugin.'
+desc 'Generate documentation for the active_resource_integration_dsl (ARID) plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'RestfulCrudIntegrationTester'
+  rdoc.title    = 'ActiveResourceIntegrationDSL (ARID)'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('CHANGELOG')
+  rdoc.rdoc_files.include('LICENSE')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

@@ -1,24 +1,35 @@
-03. 06/27.07
-    Bug Fixes
-    * fix so that tests can access the index action of controllers.
+= ActiveResourceIntegrationDSL (ARID) ChangeLog
 
-	Misc.
-	* Updates to the readme
-	* smal typo fixes
-	
-0.2 06/22/07
-	Bug Fixes
-	* end of session now logs user out with sessions/destroy
+== 0.4 -- ??/??/?? UNRELEASED
+Bug Fixes
+* Create RDoc-able documentation
+		
+Ehancements
+* add option to add HTTP headers to requests
+* add support for textarea and select fields
+* add support for nested resource paths
+		
+== 0.3 -- 06/27/07
+Bug Fixes
+* fix so that tests can access the index action of controllers.
 
-	Enhancements
-	* add sess.exercises_<thing> method
-	* add support for AJAX requests
-	* add support to pass params to read and destroy actions.
+Misc.
+* Updates to the readme
+* smal typo fixes
 	
-	Misc.
-	* Change name from RestfulCrudIntegrationTester to
-		ActiveResourceIntegrationDsl (ARID)
-	* add blog URL to LICENSE file
-	* README file updated
+== 0.2 -- 06/22/07
+Bug Fixes
+* end of session now logs user out with sessions/destroy
+
+Enhancements
+* add sess.exercises_<thing> method
+* add support for AJAX requests
+* add support to pass params to read and destroy actions.
 	
-0.1 6/16/07 (Initial Release)
+Misc.
+* Change name from RestfulCrudIntegrationTester to
+	ActiveResourceIntegrationDsl (ARID)
+* add blog URL to LICENSE file
+* README file updated
+	
+== 0.1 -- 6/16/07 (Initial Release)

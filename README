@@ -1,4 +1,4 @@
-= ActiveResourceIntegrationDsl
+= ActiveResourceIntegrationDsl (ARID) ReadMe
 
 Provides a framework of common integration tests for RESTful CRUD interactions.
 
