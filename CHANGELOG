@@ -1,0 +1,24 @@
+03. 06/27.07
+    Bug Fixes
+    * fix so that tests can access the index action of controllers.
+
+	Misc.
+	* Updates to the readme
+	* smal typo fixes
+	
+0.2 06/22/07
+	Bug Fixes
+	* end of session now logs user out with sessions/destroy
+
+	Enhancements
+	* add sess.exercises_<thing> method
+	* add support for AJAX requests
+	* add support to pass params to read and destroy actions.
+	
+	Misc.
+	* Change name from RestfulCrudIntegrationTester to
+		ActiveResourceIntegrationDsl (ARID)
+	* add blog URL to LICENSE file
+	* README file updated
+	
+0.1 6/16/07 (Initial Release)

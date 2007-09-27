@@ -1,0 +1,54 @@
+= ActiveResourceIntegrationDsl
+
+Provides a framework of common integration tests for RESTful CRUD interactions.
+
+== Installation
+script/plugin install svn://rubyforge.org/var/svn/missoularb/active_resource_integration_dsl/trunk
+
+== Usage
+
+
+	class ArticleTest < ActionController::IntegrationTest
+	  include ActiveResourceIntegrationDsl
+	  
+	  def test_some_article_functionality
+	  	new_session_as('jonnyg','testing123') do |jon|
+	      params = {
+	      	:article => {
+	      		:title => 'Foo Bites Bar',
+	      		:content => 'Bar was bitten by Foo yesterday.' 
+	      	}
+	      }
+	      jon.creates_story(params)
+	      params = {:article => {:title => 'Bar Bitten Badly'}}
+	      jon.updates_story(1,params)
+	      jon.reads_story(1)
+	      jon.deletes_story(1)
+	    end
+	  end
+	end
+
+
+== License
+
+Released under the MIT license.
+
+== Author
+
+* Jonathan Garvin ( http://www.5valleys.com )
+
+== Assumptions
+The plugin makes certain assumptions about your application.
+Some of these can be bypassed or overridden if your app does
+not conform.
+
+* You have appropriate map.resources lines in your routes.rb
+  for any controllers you intend to test with these methods.
+* sessions_path helper method returns the path to a controller
+  that controls user logins. (Provided automatically by
+  Rails if you have a sessions_controller and routes.rb
+  includes "map.resources :sessions".) 
+* Your sessions controller accepts parameters in the form of...
+  {:user => {:username => 'xxx', :password => 'yyy'}} Override
+  by providing your own new_session_as method that generates
+  an appropriate session for your app with the user provided.
