@@ -5,7 +5,7 @@ require 'rake/rdoctask'
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the restful_crud_integration_tester plugin.'
+desc 'Test the active_resource_integration_dsl plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.pattern = 'test/**/*_test.rb'

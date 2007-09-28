@@ -1,13 +1,28 @@
-= ActiveResourceIntegrationDSL (ARID) ChangeLog
+= ActiveResourceIntegrationDSL (ARID)
 
-== 0.4 -- ??/??/?? UNRELEASED
+== 0.4 -- ??/??/?? AS YET UNRELEASED
+<b>This version is NOT backwards compatible with tests for
+prior versions.</b>
+
+Changes
+* <tt>:expected_response</tt> option is now just <tt>:expects</tt>
+* <tt>creates_</tt> and <tt>updates_</tt> methods no longer go
+  through the <tt>new</tt> and <tt>edit</tt> actions.  
+* added <tt>builds_</tt> and <tt>edits_</tt> methods that <b>do</b>
+  continue on to <tt>creates_</tt> or <tt>updates_</tt> <b>if</b>
+  passed a :params hash.
+* renamed <tt>reads_</tt> method to <tt>shows_</tt> and
+  aliased <tt>lists_</tt> to <tt>shows_</tt>.
+* renamed <tt>deletes_</tt> to <tt>destroys_</tt>.
+
+
 Bug Fixes
-* Create RDoc-able documentation
+* significant updates to previously sparse documentation, now RDoc-able.
 		
 Ehancements
-* add option to add HTTP headers to requests
-* add support for textarea and select fields
-* add support for nested resource paths
+* added option to add HTTP headers to requests
+* added support for textarea and select fields
+* added support for nested resource paths
 		
 == 0.3 -- 06/27/07
 Bug Fixes
@@ -27,8 +42,7 @@ Enhancements
 * add support to pass params to read and destroy actions.
 	
 Misc.
-* Change name from RestfulCrudIntegrationTester to
-	ActiveResourceIntegrationDsl (ARID)
+* Change name from RestfulCrudIntegrationTester to ActiveResourceIntegrationDsl (ARID)
 * add blog URL to LICENSE file
 * README file updated
 	

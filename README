@@ -1,4 +1,4 @@
-= ActiveResourceIntegrationDsl (ARID) ReadMe
+= ActiveResourceIntegrationDsl (ARID)
 
 Provides a framework of common integration tests for RESTful CRUD interactions.
 
@@ -13,17 +13,16 @@ script/plugin install svn://rubyforge.org/var/svn/missoularb/active_resource_int
 	  
 	  def test_some_article_functionality
 	  	new_session_as('jonnyg','testing123') do |jon|
-	      params = {
-	      	:article => {
+	      params = {:article => {
 	      		:title => 'Foo Bites Bar',
 	      		:content => 'Bar was bitten by Foo yesterday.' 
-	      	}
-	      }
-	      jon.creates_story(params)
+	      }}
+	      jon.builds_story(:params => params)
 	      params = {:article => {:title => 'Bar Bitten Badly'}}
-	      jon.updates_story(1,params)
-	      jon.reads_story(1)
-	      jon.deletes_story(1)
+	      jon.edits_story(1,:params => params)
+	      jon.lists_stories
+	      jon.shows_story(1)
+	      jon.destroys_story(1)
 	    end
 	  end
 	end
