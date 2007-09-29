@@ -5,8 +5,7 @@ Provides a framework of common integration tests for RESTful CRUD interactions.
 == Installation
 script/plugin install svn://rubyforge.org/var/svn/missoularb/active_resource_integration_dsl/trunk
 
-== Usage
-
+== Sample Usage
 
 	class ArticleTest < ActionController::IntegrationTest
 	  include ActiveResourceIntegrationDsl
@@ -26,6 +25,11 @@ script/plugin install svn://rubyforge.org/var/svn/missoularb/active_resource_int
 	    end
 	  end
 	end
+
+== API
+Complete API Documentation @
+* Session Instantiation -- ActiveResourceIntegrationDsl  
+* Session Methods -- ActiveResourceIntegrationDsl::SessionMethods
 
 
 == License

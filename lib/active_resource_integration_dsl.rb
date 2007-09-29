@@ -10,6 +10,10 @@
 # * Accepts blocks with tests to perform additional application
 #   specific tests.
 #
+# Complete API Documentation @
+# * Session Instantiation -- ActiveResourceIntegrationDsl  
+# * Session Methods -- ActiveResourceIntegrationDsl::SessionMethods
+
 module ActiveResourceIntegrationDsl
   
   # Logs in a user to the application via a SessionsController.  Assumes that you have
@@ -84,32 +88,27 @@ module ActiveResourceIntegrationDsl
   # should be sufficient. 
   # 
   # All Arid magic methods begin with one of several prefixes that begin to describe 
-  # what the logged in user will be doing. These prefixes are the following, and each
-  # will be explained in more detail below.
-  # * <tt>lists_</tt> -- Correspondes to a RESTful controller's <tt>index</tt> action.
-  # * <tt>shows_</tt> -- Correspondes to <tt>show</tt>.
-  # * <tt>builds_</tt> -- Correspondes to <tt>new</tt>.
-  # * <tt>creates_</tt> -- Correspondes to <tt>create</tt>.
-  # * <tt>edits_</tt> -- Correspondes to <tt>edit</tt>.
-  # * <tt>updates_</tt> -- Correspondes to <tt>update</tt>.
-  # * <tt>destroys_</tt> -- Correspondes to <tt>destroy</tt>.
+  # what the logged in user will be doing. These prefixes are shown in the following,
+  # list with their corresponding controller actions. Each will be explained in more
+  # detail below.
+  # * <tt>lists_</tt> -- <tt>index</tt>
+  # * <tt>shows_</tt> -- <tt>show</tt>
+  # * <tt>builds_</tt> --  <tt>new</tt>
+  # * <tt>creates_</tt> -- <tt>create</tt>
+  # * <tt>edits_</tt> -- <tt>edit</tt>
+  # * <tt>updates_</tt> -- <tt>update</tt>
+  # * <tt>destroys_</tt> -- <tt>destroy</tt>
   # * <tt>exercies_</tt> -- Full CRUD testing of simple/scaffold generated RESTful controllers.
   #
   # Each of the above prefixes is followed by a description of the action that is
   # derived from the RESTful helpers provided by <tt>map.resources</tt> calls in the
-  # routes.rb.
-  #
-  # For instance, if the _path method you would use in a link_to method in your view
-  # was something like...
-  #     new_article_comment_path(@article)
-  # then a corresponding ARID test would look something like...
-  #     user.builds_article_comment(@article)
-  #
-  # Or, if the form tag to create a comment looked something like...
-  #     <% form_for :comment, :url => comments_path %>
-  # then the corresponding ARID test to test the submission of this form would look
-  # something like...
-  #     user.creates_comment(:params => {:comment => {:subject => 'Wow!', :body => 'This is cool!'}})
+  # routes.rb. For instance, if the _path method you would use in a link_to method in your view
+  # was something like <tt>new_article_comment_path(@article)</tt> then a corresponding
+  # ARID test would look something like <tt>user.builds_article_comment(@article)</tt>.
+  # Or, if the form tag to create a comment looked something like
+  # <tt><% form_for :comment, :url => comments_path do |form| %></tt> then the
+  # corresponding ARID test to test the submission of this form would look something
+  # like <tt>user.creates_comment(:params => {:comment => {:subject => 'Wow!', :body => 'This is cool!'}})</tt>.
   # Note how in this last example, the path method in the form tag uses <tt>_comment<b>s</b></tt>,
   # (plural) but the ARID uses <tt>_comment</tt> (singular).
   #  
