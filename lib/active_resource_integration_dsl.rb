@@ -232,7 +232,7 @@ module ActiveResourceIntegrationDsl
   # * <tt>user.destroys_post(@post,{:expects => :success}) {|page| page.assert_select :flash_warning, 'Permission Denied' }</tt>
   # * <tt>user.destroys_comment(@comment,{:via_ajax => true}) {|page| page.assert_select_rjs :replace_html, 'feedback' }</tt>
   #
-  # = _exercises Prefix
+  # = exercises_ Prefix
   # This test is usually only useful on the most basic controllers, ie, scaffold generated and mostly unedited. But for those
   # controllers, it's a quick easy way to boost your test coverage. It will walk through the entire process of creating,
   # updating, and destroying an object, making standard assertions along the way.
