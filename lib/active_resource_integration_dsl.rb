@@ -38,7 +38,7 @@ module ActiveResourceIntegrationDsl
   # 
   #   def test_read_users_index
   #     new_session_as('admin','password') do |admin|
-  #       admin.reads_users
+  #       admin.lists_users
   #     end
   #   end
   #
@@ -62,7 +62,7 @@ module ActiveResourceIntegrationDsl
   # === Sample
   #  def test_prepare_for_login
   #    new_session do |guest|
-  #      guest.reads(new_session_path)
+  #      guest.shows(new_session_path)
   #    end
   #  end
   def new_session
