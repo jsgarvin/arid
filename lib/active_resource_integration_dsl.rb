@@ -444,6 +444,7 @@ module ActiveResourceIntegrationDsl
     def intermediate_path_for(action,obj,ids = nil)
       action = action.to_s
       return path_for("#{action}_#{obj.to_s}",ids) if self.respond_to?("#{action}_#{obj.to_s}_path")
+      # Rails1.2 compatability section. We never get here in 2.0. Remove eventually.
       post_elements = obj.to_s.split(/_/)
       pre_elements = []
       until post_elements.blank? do
