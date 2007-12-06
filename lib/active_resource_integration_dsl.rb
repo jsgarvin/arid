@@ -236,10 +236,10 @@ module ActiveResourceIntegrationDsl
   # controllers, it's a quick easy way to boost your test coverage. It will walk through the entire process of creating,
   # updating, and destroying an object, making standard assertions along the way.
   # === Arguments
-  # * <tt>:new_params</tt> -- Params to use with the <tt>new</tt> and <tt>create</tt> actions.
-  # * <tt>:update_params</tt> -- Params to use with the <tt>edit</tt> and <tt>update</tt> actions.
+  # Takes two hashes of params to pass. The first to builds_ and creates_, the second to edits_ and updates_. After
+  # these two required hashes, you may optionally pass an...
   # * Options Hash
-  #   * <tt>:expected_not_found_response</tt> -- Defailt is HTTP 404.
+  #   * <tt>:expected_not_found_response</tt> -- Default is HTTP 404.
   # === Samples
   # * <tt>user.exercises_articles({:article => {:title => 'Excercise be Good', :content => 'New study proves it.'}},{:article => {:subject => 'Exercise is Good'}})</tt> 
   # 
