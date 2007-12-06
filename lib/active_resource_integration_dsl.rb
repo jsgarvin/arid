@@ -275,7 +275,7 @@ module ActiveResourceIntegrationDsl
       goes_to(new_path_for(object,args)) do |page|
         check_form_on(page,self.send("#{object.to_s.pluralize}_path",*args),:post,params,opts) if params
       end
-      creates(object,*args + [opts.merge(:params => params)],&block)
+      creates(object,*args + [opts.merge(:params => params)],&block) if params
     end
     
     # Resort to this only when unable to use magic methods described above.
@@ -298,7 +298,7 @@ module ActiveResourceIntegrationDsl
       goes_to(edit_path_for(object,args)) do |page|
         check_form_on(page,path_for(object,args),:put,params,opts) if params
       end
-      updates(object,*args + [opts.merge(:params => params)],&block)
+      updates(object,*args + [opts.merge(:params => params)],&block) if params
     end
     
     # Resort to this only when unable to use magic methods described above.
