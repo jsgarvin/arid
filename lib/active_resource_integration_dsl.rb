@@ -326,7 +326,7 @@ module ActiveResourceIntegrationDsl
       id = nil #initialize
       
       #Create
-      builds(object,new_params) do |page|
+      builds(object,:params => new_params) do |page|
         id = get_id_from_url(page.response.redirected_to)
         page.follow_redirect!
         page.assert_response :success
@@ -338,7 +338,7 @@ module ActiveResourceIntegrationDsl
       end
       
       #Update
-      edits(object,id,update_params) do |page|
+      edits(object,id,:params => update_params) do |page|
         di = get_id_from_url(page.response.redirected_to)
         assert_equal(id,di)
         page.follow_redirect!
