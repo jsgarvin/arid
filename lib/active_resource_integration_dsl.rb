@@ -347,7 +347,7 @@ module ActiveResourceIntegrationDsl
       
       #Destroy
       destroys(object,id)
-      reads(object,id,{:expected_response => opts[:expected_not_found_response] || 404})
+      shows(object,id,{:expects => opts[:expected_not_found_response] || 404})
     end
     
     
