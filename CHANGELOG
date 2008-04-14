@@ -1,5 +1,8 @@
 = ActiveResourceIntegrationDSL (ARID)
 
+== 0.5 -- 04/13/2008
+* Several minor bug fixes and optimizations
+
 == 0.4 -- 10/13/2007
 <b>This version is NOT backwards compatible with tests for
 prior versions.</b>
