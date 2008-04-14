@@ -273,7 +273,11 @@ module ActiveResourceIntegrationDsl
       opts = args.last.is_a?(Hash) ? args.pop.symbolize_keys : {}
       params = opts.delete(:params)
       goes_to(new_path_for(object,args)) do |page|
-        check_form_on(page,self.send("#{object.to_s.pluralize}_path",*args),:post,params,opts) if params
+        if params
+          check_form_on(page,self.send("#{object.to_s.pluralize}_path",*args),:post,params,opts)
+        else
+          yield self if block_given?
+        end
       end
       creates(object,*args + [opts.merge(:params => params)],&block) if params
     end
@@ -296,7 +300,11 @@ module ActiveResourceIntegrationDsl
       opts = args.last.is_a?(Hash) ? args.pop.symbolize_keys : {}
       params = opts.delete(:params)
       goes_to(edit_path_for(object,args)) do |page|
-        check_form_on(page,path_for(object,args),:put,params,opts) if params
+        if params
+          check_form_on(page,path_for(object,args),:put,params,opts)
+        else
+          yield self if block_given?
+        end
       end
       updates(object,*args + [opts.merge(:params => params)],&block) if params
     end
