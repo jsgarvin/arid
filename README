@@ -3,7 +3,7 @@
 Provides a framework of common integration tests for RESTful CRUD interactions.
 
 == Installation
-script/plugin install svn://rubyforge.org/var/svn/arid/trunk
+script/plugin install git://github.com/jsgarvin/arid.git
 
 == Sample Usage
 
